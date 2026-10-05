@@ -307,3 +307,9 @@ If you use Sim2Signal, please cite:
   url={https://arxiv.org/abs/2609.01676},
 }
 ```
+
+---
+
+## ⚖️ License
+
+Code: MIT (see [`LICENSE`](LICENSE)). Data: each benchmark network keeps its source's licence; see [`DATA_LICENSES.md`](DATA_LICENSES.md). Note that the Cologne networks are non-commercial (CC BY-NC-SA 3.0).
