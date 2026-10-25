@@ -286,7 +286,7 @@ Only Tempe and Bullhead carry NEMA signal plans, so only on them can the phase-t
 
 Developed and maintained by [DaRL Lab](https://github.com/DaRL-LibSignal), School of Computing and Augmented Intelligence, Arizona State University.
 
-Ferdous Al Rafi, Susrik Mukherjee, Latika Liladhar Dekate, Jennifer Yawa Lavoe, Huaiyuan Yao, Shlok Mohanty, Longchao Da, Xuesong Zhou, and [Hua Wei](https://www.public.asu.edu/~hwei27/index.html).
+Ferdous Al Rafi, Susrik Mukherjee, Latika Liladhar Dekate, Jennifer Yawa Lavoe, Huaiyuan Yao, Shlok Mohanty, Longchao Da, Xuesong Zhou, and [Hua Wei](https://labs.engineering.asu.edu/hw/).
 
 We welcome issues and pull requests. For questions, contact Hua Wei (`hua.wei [at] asu.edu`).
 
