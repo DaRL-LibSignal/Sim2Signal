@@ -15,7 +15,8 @@ sim2real:
   training_iterations: 1
   domain_randomization:
     enabled: True
-    seed: 0
+    # seed omitted on purpose: the DR stream falls back to the run --seed
+    # (domain_adaptation_trainer.py), so multi-seed runs resample it; seed 0 is unchanged.
     output_dir: output_data/sim2real_transitions/domain_adaptation
     parameters:
       headwayTime:

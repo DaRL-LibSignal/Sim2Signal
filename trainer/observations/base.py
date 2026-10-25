@@ -146,9 +146,11 @@ class BaseObservationTrainer(BaseTrainer):
         self.randomized_observation_parameters = (
             self.build_randomized_observation_parameters()
         )
+        # DR sampling stream follows the run seed (multi-seed runs must resample it);
+        # seed 0 / unset reproduces the original fixed-0 stream exactly.
         self.sim_observation_rng = np.random.default_rng(
             self.domain_randomization_config.get(
-                "seed", 0
+                "seed", self.seed or 0
             )
         )
         self.current_sim_observation_config = self.build_domain_randomization_config()

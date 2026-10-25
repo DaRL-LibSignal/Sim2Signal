@@ -41,12 +41,17 @@ class LatentObservationTrainer(BaseObservationTrainer):
         # Cache is per AGENT as well as method/network: agents use different obs
         # generators (dqn = incoming lanes only, presslight = all lanes), so their
         # encoders have different input dims and MUST NOT share a cache dir.
+        # Also per SEED for seed != 0: otherwise seeds 1/2 would load seed 0's cached
+        # encoders and the encoder stage would never be resampled. Seed 0 keeps the
+        # original (unsuffixed) path so existing caches and results stay valid.
         self.enc_dec_cache_dir = os.path.join(
             "pretrained",
             method,
             Registry.mapping["command_mapping"]["setting"].param["agent"],
             Registry.mapping["command_mapping"]["setting"].param["network"],
         )
+        if self.seed:
+            self.enc_dec_cache_dir = os.path.join(self.enc_dec_cache_dir, f"s{self.seed}")
 
     # ------------------------------------------------------------------
     # Stage 1

@@ -45,7 +45,9 @@ class Sim2RealActionsDRTrainer(Sim2RealActionsTrainer):
         self.dr_drop_range = (float(drop[0]), float(drop[1]))
         # Apply the random table in the deployment mode, so the shield toggles both sides.
         self.pool_mode = cfg.get("real_phase_transition_mode", "enforce")
-        self.dr_rng = np.random.default_rng(0)
+        # Follows the run seed so multi-seed runs resample the constraint draws;
+        # seed 0 / unset reproduces the original fixed-0 stream exactly.
+        self.dr_rng = np.random.default_rng(self.seed or 0)
 
     def sim_train(self, episode):
         # Synthesize this episode's constraint: drop a random fraction of flexible's edges.
